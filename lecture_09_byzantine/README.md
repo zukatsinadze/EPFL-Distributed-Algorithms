@@ -1,4 +1,4 @@
-Processes are random...
+# Processes are random...
 
 
 True information: Recieved from at least f + 1 processes
@@ -7,7 +7,7 @@ Decision: Recieved from at least 2f+1 processes
 
 2f+1 and 2f+1 always intersect with f+1 if we have 3f+1 in total
 
-# Asynch Byzantine Consistent Broadcast
+## Async Byzantine Consistent Broadcast
 
 broadcast(m)
 deliver(m)
@@ -36,7 +36,7 @@ and P3-s will deliver m'.
 Algorithm 1:
 Uses: AuthenticatedPerfectLinks (apl)
 
-
+```
 upon event <init>
   sentecho = False
   delivered = False
@@ -59,7 +59,7 @@ upon exists message m s.t. #(p in S | echos[p] = m) > (N + f) / 2
   if not delivered:
     delivered = True
     trigger <bcbDeliver, src, m>
-
+```
 
 
 Algorithm 2:
@@ -72,7 +72,7 @@ Once it recieved enough verifications it sends out message together with witness
 
 
 
-# Async Byzantine Reliable Broadcast
+## Async Byzantine Reliable Broadcast
 
 BRB1. If S is correct and broadcasts message m, S eventually delivers m
 BRB2. No two correct processes deliver different messages

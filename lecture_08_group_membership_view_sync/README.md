@@ -26,7 +26,7 @@ Memb4. Accuracy: If some process installs a view (i, M) and p not in M, then p h
 Events: <membView, V> (install view, no joins and leaves)
 
 Uses: PerfectFailureDetector (P), UniformConsensus
-
+```
 upon event <init>
   view = (0, S)
   correct = S
@@ -44,7 +44,7 @@ upon event <uconsDecide, (id, memb)>
   wait = False
   trigger <membView, view>
 
-
+```
 Group Membership implies Perfect Failure Detector.
 
 
@@ -73,7 +73,7 @@ So we add <vsBlock, ok> and <vsBlock>
 
 
 Uses: GroupMembership (gmp), TerminatingReliableBroadcast (trb), BestEffortBroadcast (beb)
-
+```
 upon event <init>
   view = (0, S)
   nextView = None
@@ -119,14 +119,14 @@ upon trbDone == view.memb and blocked = True:
   blocked = False
   delivered = empty
   trigger <vsView, view>
+```
 
 
 
-
-Consensus based VS:
+## Consensus based VS:
 
 Uses: UniformConsensus, BestEffortBroadcast, Perfect P
-
+```
 upon event <init>
   view = (0, S)
   correct = S
@@ -173,15 +173,15 @@ upon event <uconsDecide, id, memb, vsdset>
   delivered = empty
   dset = empty
   trigger <vsView, view>
+```
 
 
 
-
-Uniform View Synchrony:
+## Uniform View Synchrony:
 
 RB4 property is with uniform. Everything else is same.
 
-
+```
 upon event <init>
   view = (0, S)
   correct = S
@@ -238,3 +238,4 @@ upon event <uconsDecide, id, memb, vsdset>
   delivered = empty
   dset = empty
   trigger <vsView, view>
+```
